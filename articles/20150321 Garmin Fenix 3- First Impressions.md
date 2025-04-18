@@ -1,3 +1,5 @@
+## Garmin Fenix 3: First Impressions
+
 ---
 tags:
 - wearables
