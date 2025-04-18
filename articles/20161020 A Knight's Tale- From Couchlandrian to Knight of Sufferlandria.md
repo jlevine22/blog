@@ -1,10 +1,12 @@
-## A Knight's Tale: From Coudhlandrian to Knight of Sufferlandria
-
 ---
+published: October 20th, 2016
 tags:
 - fitness
 - biking
 ---
+
+## A Knight's Tale: From Coudhlandrian to Knight of Sufferlandria
+
 
 <!-- preview -->
 <!--
