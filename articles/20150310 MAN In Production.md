@@ -1,6 +1,5 @@
-## MAN In Production
-
 ---
+published: March 10th, 2015
 tags:
 - programming
 - technology
@@ -9,6 +8,9 @@ tags:
 - javascript
 - infrastructure
 ---
+
+## MAN In Production
+
 <!-- preview -->
 Here's a quick look at how I'm running MAN-Blog in production:
 

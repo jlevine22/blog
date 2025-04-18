@@ -1,12 +1,13 @@
-## Race Report: Emerald Bay Trail Run
-
 ---
+published: September 21st, 2014
 tags:
 - fitness
 - race report
 - running
 - trail running
 ---
+
+## Race Report: Emerald Bay Trail Run
 
 <!-- preview -->
 I have been running now for about a year and a half. The majority of that has been on the road. I've decided this summer to throw some trail running into the mix. It's nice to save a little bit of pounding on the knees and to mix up the scenery a bit. Being Tahoe, there is an embarrassment of riches when it comes to Trails. For my first trail race I chose the [Emerald Bay Trail Run](http://www.tahoetrailrunning.com/trail-runs/emerald-bay-trail-run/). It's advertised as a 7.5 mile fast trail run with low/moderate climbing.

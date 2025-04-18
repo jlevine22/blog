@@ -1,6 +1,5 @@
-## iPad Pro Thoughts
-
 ---
+published: March 6th, 2016
 tags:
 - review
 - technology
@@ -8,6 +7,8 @@ tags:
 - ipad
 - apple
 ---
+
+## iPad Pro Thoughts
 
 <!-- preview -->
 I have been using an iPad 2 since the day it came out. I've loved using it since the day I got it and it's held up very well over the past 5 years, an eternity in technology time. It was simply time to upgrade. I'm the kind of person who likes to go big because otherwise why bother? I think that sentiment really fits with getting an iPad Pro. This thing fits that description in many ways: big screen, big performance, and a price tag to match.

@@ -1,11 +1,12 @@
-## Review: Netatmo Urban Weather Station
-
 ---
+published: September 30th, 2014
 tags:
 - review
 - technology
 - internet of things
 ---
+
+## Review: Netatmo Urban Weather Station
 
 <!-- preview -->
 I've had my eye on the Netatmo Urban Weather Station for quite a while. In addition to being a data junkie I'm also very interested in weather as well (I even wrote a weather iPhone app!). With the King Fire pumping smoke into the Tahoe basin, I'd really like a way to know when conditions are safe for outdoor activity. After playing with it for a little bit, I found it didn't quite work the way I thought.

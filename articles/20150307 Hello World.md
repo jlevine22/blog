@@ -1,9 +1,10 @@
-## Hello World
-
 ---
+published: March 7th, 2015
 tags:
 - backend development
 ---
+
+## Hello World
 
 Hello World! This is the first post of my new MAN blogging system. MAN stands for markdown, angular, and node because that’s how real men blog.
 

@@ -1,6 +1,5 @@
-## Garmin Fenix 3: First Impressions
-
 ---
+published: March 21st, 2015
 tags:
 - wearables
 - fitness
@@ -10,6 +9,8 @@ tags:
 - technology
 - review
 ---
+
+## Garmin Fenix 3: First Impressions
 
 <!-- preview -->
 For the past year or so I've been wearing a Pebble smart watch. I was never really interested in watches as fashion  accessories but more as functional devices. With the rise of cell phones, I never saw the need to carry a second time telling device.  The Pebble brought a new level of convenience  and functionality to the table that a phone didn't. The Pebble's been great for the past year but it was getting a little dated and I think it was just time to move on.
