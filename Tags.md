@@ -10,12 +10,13 @@
 - [fitness](FITNESS.md) 3
 - [food](FOOD.md) 1
 - [garmin](GARMIN.md) 1
+- [github](GITHUB.md) 1
 - [infrastructure](INFRASTRUCTURE.md) 2
 - [internet of things](INTERNET%20OF%20THINGS.md) 1
 - [ios](IOS.md) 2
 - [ipad](IPAD.md) 1
 - [javascript](JAVASCRIPT.md) 2
-- [markdown](MARKDOWN.md) 1
+- [markdown](MARKDOWN.md) 2
 - [mobile development](MOBILE%20DEVELOPMENT.md) 1
 - [node](NODE.md) 1
 - [node.js](NODE.JS.md) 2
@@ -24,6 +25,7 @@
 - [review](REVIEW.md) 4
 - [running](RUNNING.md) 1
 - [smart watch](SMART%20WATCH.md) 1
+- [swift](SWIFT.md) 1
 - [technology](TECHNOLOGY.md) 6
 - [trail running](TRAIL%20RUNNING.md) 1
 - [watches](WATCHES.md) 1

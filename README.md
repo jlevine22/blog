@@ -1,5 +1,14 @@
 # Recent Articles
 
+## [My Blog in 2025- From Node Servers to Pure GitHub Markdown](articles/20250418%20My%20Blog%20in%202025-%20From%20Node%20Servers%20to%20Pure%20GitHub%20Markdown.md)
+###### April 18th, 2025
+
+Ten years ago I started a blog. As a developer, I *had* to roll my own—Node.js on the backend, Angular on the frontend, and every post sat in a Markdown file with a YAML header that my server parsed. Dropbox handled the sync—simple, cheap, and it just worked.
+
+It served me for almost a decade, but 2025 called for an even leaner setup.
+
+[Continue Reading](articles/20250418%20My%20Blog%20in%202025-%20From%20Node%20Servers%20to%20Pure%20GitHub%20Markdown.md)
+
 ## [A Knight's Tale- From Couchlandrian to Knight of Sufferlandria](articles/20161020%20A%20Knight's%20Tale-%20From%20Couchlandrian%20to%20Knight%20of%20Sufferlandria.md)
 ###### October 20th, 2016
 
@@ -30,16 +39,6 @@ I have been using an iPad 2 since the day it came out. I've loved using it since
 
 [Continue Reading](articles/20160306%20iPad%20Pro%20Thoughts.md)
 
-## [Garmin Fenix 3- First Impressions](articles/20150321%20Garmin%20Fenix%203-%20First%20Impressions.md)
-###### March 21st, 2015
-
-For the past year or so I've been wearing a Pebble smart watch. I was never really interested in watches as fashion  accessories but more as functional devices. With the rise of cell phones, I never saw the need to carry a second time telling device.  The Pebble brought a new level of convenience  and functionality to the table that a phone didn't. The Pebble's been great for the past year but it was getting a little dated and I think it was just time to move on.
-
-A few days ago I got my hands on a Garmin Fenix 3 Multisport watch. I won't get into the nitty gritty about everything this watch can do. For that, you should read [DC Rainmaker's in depth Fenix 3 review](http://www.dcrainmaker.com/2015/03/garmin-fenix3-detailed-review.html). I'll just breifly touch on things I like and don't like.
-
-[Continue Reading](articles/20150321%20Garmin%20Fenix%203-%20First%20Impressions.md)
-
 ##
-[View All](Articles.md)
-
-[Tags](Tags.md)
+[View All](articles/)
+[View Tags](Tags.md)
