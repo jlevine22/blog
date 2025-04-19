@@ -40,4 +40,6 @@ A few days ago I got my hands on a Garmin Fenix 3 Multisport watch. I won't get 
 [Continue Reading](articles/20150321%20Garmin%20Fenix%203-%20First%20Impressions.md)
 
 ##
-[View All](articles/)
+[View All](Articles.md)
+
+[Tags](Tags.md)

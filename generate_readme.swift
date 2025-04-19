@@ -117,7 +117,7 @@ for article in sortedArticles {
     let link = "articles/\(encoded)"
     articlesIndex += "- [\(article.title)](\(link)) \(dateLine)\n"
 }
-try articlesIndex.write(to: articlesDir.appendingPathComponent("README.md"), atomically: true, encoding: .utf8)
+try articlesIndex.write(to: URL(fileURLWithPath: "Articles.md"), atomically: true, encoding: .utf8)
 
 // MARK: - Build Tag Mapping
 var tagMap: [String: [Article]] = [:]
@@ -135,7 +135,7 @@ for tag in tagMap.keys.sorted() {
     let encodedFile = fileName.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? fileName
     tagReadme += "- [\(tag)](\(encodedFile)) \(count)\n"
 }
-try tagReadme.write(to: tagsDir.appendingPathComponent("README.md"), atomically: true, encoding: .utf8)
+try tagReadme.write(to: URL(fileURLWithPath: "Tags.md"), atomically: true, encoding: .utf8)
 
 // MARK: - Generate individual Tag files
 for (tag, articles) in tagMap {
