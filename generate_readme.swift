@@ -134,7 +134,7 @@ for tag in tagMap.keys.sorted() {
     let count = tagMap[tag]?.count ?? 0
     let fileName = "\(tag.uppercased()).md"
     let encodedFile = fileName.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? fileName
-    tagReadme += "- [\(tag)](\(encodedFile)) \(count)\n"
+    tagReadme += "- [\(tag)](tags/\(encodedFile)) \(count)\n"
 }
 try tagReadme.write(to: URL(fileURLWithPath: "Tags.md"), atomically: true, encoding: .utf8)
 

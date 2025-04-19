@@ -1,32 +1,32 @@
 # Tags
 
-- [angular](ANGULAR.md) 1
-- [apple](APPLE.md) 1
-- [backend development](BACKEND%20DEVELOPMENT.md) 1
-- [biking](BIKING.md) 1
-- [cloud](CLOUD.md) 2
-- [devops](DEVOPS.md) 1
-- [e-commerce](E-COMMERCE.md) 1
-- [fitness](FITNESS.md) 3
-- [food](FOOD.md) 1
-- [garmin](GARMIN.md) 1
-- [github](GITHUB.md) 1
-- [infrastructure](INFRASTRUCTURE.md) 2
-- [internet of things](INTERNET%20OF%20THINGS.md) 1
-- [ios](IOS.md) 2
-- [ipad](IPAD.md) 1
-- [javascript](JAVASCRIPT.md) 2
-- [markdown](MARKDOWN.md) 2
-- [mobile development](MOBILE%20DEVELOPMENT.md) 1
-- [node](NODE.md) 1
-- [node.js](NODE.JS.md) 2
-- [programming](PROGRAMMING.md) 2
-- [race report](RACE%20REPORT.md) 1
-- [review](REVIEW.md) 4
-- [running](RUNNING.md) 1
-- [smart watch](SMART%20WATCH.md) 1
-- [swift](SWIFT.md) 1
-- [technology](TECHNOLOGY.md) 6
-- [trail running](TRAIL%20RUNNING.md) 1
-- [watches](WATCHES.md) 1
-- [wearables](WEARABLES.md) 1
+- [angular](tags/ANGULAR.md) 1
+- [apple](tags/APPLE.md) 1
+- [backend development](tags/BACKEND%20DEVELOPMENT.md) 1
+- [biking](tags/BIKING.md) 1
+- [cloud](tags/CLOUD.md) 2
+- [devops](tags/DEVOPS.md) 1
+- [e-commerce](tags/E-COMMERCE.md) 1
+- [fitness](tags/FITNESS.md) 3
+- [food](tags/FOOD.md) 1
+- [garmin](tags/GARMIN.md) 1
+- [github](tags/GITHUB.md) 1
+- [infrastructure](tags/INFRASTRUCTURE.md) 2
+- [internet of things](tags/INTERNET%20OF%20THINGS.md) 1
+- [ios](tags/IOS.md) 2
+- [ipad](tags/IPAD.md) 1
+- [javascript](tags/JAVASCRIPT.md) 2
+- [markdown](tags/MARKDOWN.md) 2
+- [mobile development](tags/MOBILE%20DEVELOPMENT.md) 1
+- [node](tags/NODE.md) 1
+- [node.js](tags/NODE.JS.md) 2
+- [programming](tags/PROGRAMMING.md) 2
+- [race report](tags/RACE%20REPORT.md) 1
+- [review](tags/REVIEW.md) 4
+- [running](tags/RUNNING.md) 1
+- [smart watch](tags/SMART%20WATCH.md) 1
+- [swift](tags/SWIFT.md) 1
+- [technology](tags/TECHNOLOGY.md) 6
+- [trail running](tags/TRAIL%20RUNNING.md) 1
+- [watches](tags/WATCHES.md) 1
+- [wearables](tags/WEARABLES.md) 1
