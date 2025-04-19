@@ -1,7 +1,8 @@
 # Tags
 
+- [airpods](tags/AIRPODS.md) 1
 - [angular](tags/ANGULAR.md) 1
-- [apple](tags/APPLE.md) 1
+- [apple](tags/APPLE.md) 2
 - [backend development](tags/BACKEND%20DEVELOPMENT.md) 1
 - [biking](tags/BIKING.md) 1
 - [cloud](tags/CLOUD.md) 2
@@ -22,11 +23,11 @@
 - [node.js](tags/NODE.JS.md) 2
 - [programming](tags/PROGRAMMING.md) 2
 - [race report](tags/RACE%20REPORT.md) 1
-- [review](tags/REVIEW.md) 4
+- [review](tags/REVIEW.md) 5
 - [running](tags/RUNNING.md) 1
 - [smart watch](tags/SMART%20WATCH.md) 1
 - [swift](tags/SWIFT.md) 1
-- [technology](tags/TECHNOLOGY.md) 6
+- [technology](tags/TECHNOLOGY.md) 7
 - [trail running](tags/TRAIL%20RUNNING.md) 1
 - [watches](tags/WATCHES.md) 1
 - [wearables](tags/WEARABLES.md) 1

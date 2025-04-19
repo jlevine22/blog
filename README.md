@@ -9,6 +9,13 @@ It served me for almost a decade, but 2025 called for an even leaner setup.
 
 [Continue Reading](articles/20250418%20My%20Blog%20in%202025-%20From%20Node%20Servers%20to%20Pure%20GitHub%20Markdown.md)
 
+## [AirPods 4 with ANC mini-review](articles/20241030%20AirPods%204%20with%20ANC%20mini-review.md)
+###### October 30th, 2024
+
+I’ve been using Apple AirPods 4 with Active Noise Cancellation since they were released, but only just had the chance this past weekend to take them on a flight. Here’s a few thoughts:
+
+[Continue Reading](articles/20241030%20AirPods%204%20with%20ANC%20mini-review.md)
+
 ## [A Knight's Tale- From Couchlandrian to Knight of Sufferlandria](articles/20161020%20A%20Knight's%20Tale-%20From%20Couchlandrian%20to%20Knight%20of%20Sufferlandria.md)
 ###### October 20th, 2016
 
@@ -31,13 +38,6 @@ The 2016 ADDY Awards were held last night at the Perppermill Casino.  The ADDYs 
 ![](../resources/20160312/sr7AZnZ%20Medium.jpeg)
 
 [Continue Reading](articles/20160312%202016%20ADDY%20Awards.md)
-
-## [iPad Pro Thoughts](articles/20160306%20iPad%20Pro%20Thoughts.md)
-###### March 6th, 2016
-
-I have been using an iPad 2 since the day it came out. I've loved using it since the day I got it and it's held up very well over the past 5 years, an eternity in technology time. It was simply time to upgrade. I'm the kind of person who likes to go big because otherwise why bother? I think that sentiment really fits with getting an iPad Pro. This thing fits that description in many ways: big screen, big performance, and a price tag to match.
-
-[Continue Reading](articles/20160306%20iPad%20Pro%20Thoughts.md)
 
 ##
 [View All](articles/)
