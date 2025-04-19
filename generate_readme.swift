@@ -105,7 +105,8 @@ for article in sortedArticles.prefix(5) {
 }
 
 rootReadme += "##\n"
-rootReadme += "[View All](articles/)"
+rootReadme += "[View All](articles/)\n"
+rootReadme += "[View Tags](Tags.md)\n"
 
 try rootReadme.write(to: URL(fileURLWithPath: "README.md"), atomically: true, encoding: .utf8)
 
