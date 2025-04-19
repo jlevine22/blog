@@ -81,7 +81,10 @@ for article in recent {
     readme += "## \(article.title)\n"
     readme += "###### \(dateLine)\n\n"
     readme += "\(previewText)\n\n"
-    readme += "[Continue Reading](articles/\(article.url.lastPathComponent))\n\n"
+    
+    let filename = article.url.lastPathComponent
+    let encodedFilename = filename.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? filename
+    readme += "[Continue Reading](articles/\(encodedFilename))\n\n"
 }
 
 readme += "##\n"
