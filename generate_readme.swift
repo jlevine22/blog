@@ -2,10 +2,15 @@
 
 import Foundation
 
-// Directory containing markdown articles\ 
+// MARK: - Setup Directories
+let fileManager = FileManager.default
 let articlesDir = URL(fileURLWithPath: "articles", isDirectory: true)
+let tagsDir = URL(fileURLWithPath: "tags", isDirectory: true)
 
-// DateFormatter to parse filenames (yyyyMMdd)
+// Ensure tags directory exists
+try? fileManager.createDirectory(at: tagsDir, withIntermediateDirectories: true)
+
+// MARK: - Date Formatters
 let inputFormatter: DateFormatter = {
     let df = DateFormatter()
     df.dateFormat = "yyyyMMdd"
@@ -13,14 +18,13 @@ let inputFormatter: DateFormatter = {
     return df
 }()
 
-// DateFormatter to format for README (e.g., May 15th, 2024)
 func formattedDate(_ date: Date) -> String {
     let calendar = Calendar.current
     let day = calendar.component(.day, from: date)
-    let formatter = DateFormatter()
-    formatter.dateFormat = "LLLL yyyy"
-    let monthYear = formatter.string(from: date)
-    // Determine ordinal suffix
+    let month = calendar.component(.month, from: date)
+    let year = calendar.component(.year, from: date)
+    let monthName = DateFormatter().monthSymbols[month - 1]
+    // Ordinal suffix
     let suffix: String
     switch day {
     case 11, 12, 13: suffix = "th"
@@ -32,66 +36,118 @@ func formattedDate(_ date: Date) -> String {
         default: suffix = "th"
         }
     }
-    return "\(formatter.monthSymbols[Calendar.current.component(.month, from: date)-1]) \(day)\(suffix), \(calendar.component(.year, from: date))"
+    return "\(monthName) \(day)\(suffix), \(year)"
 }
 
-// Read and process files
-let fileManager = FileManager.default
-
-guard let items = try? fileManager.contentsOfDirectory(at: articlesDir, includingPropertiesForKeys: nil) else {
-    fatalError("Could not list directory: \(articlesDir.path)")
+// MARK: - Load and Parse Articles
+guard let articleFiles = try? fileManager.contentsOfDirectory(at: articlesDir, includingPropertiesForKeys: nil) else {
+    fatalError("Could not list articles directory")
 }
 
-// Collect (date, title, url) tuples for markdown files
-var articles: [(date: Date, title: String, url: URL)] = []
-
-for fileURL in items where fileURL.pathExtension.lowercased() == "md" {
-    let filename = fileURL.deletingPathExtension().lastPathComponent
-    // Expect "YYYYMMDD Title"
-    let components = filename.split(separator: " ", maxSplits: 1)
-    guard components.count == 2 else { continue }
-    let dateString = String(components[0])
-    let title = String(components[1])
-    guard let date = inputFormatter.date(from: dateString) else { continue }
-    articles.append((date: date, title: title, url: fileURL))
+struct Article {
+    let date: Date
+    let title: String
+    let filename: String
+    let url: URL
+    var tags: [String]
 }
 
-// Sort by date descending, pick top 5
-let recent = articles
-    .sorted { $0.date > $1.date }
-    .prefix(5)
+var articles: [Article] = []
 
-// Build README content
-var readme = "# Recent Articles\n\n"
+for fileURL in articleFiles where fileURL.pathExtension.lowercased() == "md" {
+    let filename = fileURL.lastPathComponent
+    let nameOnly = fileURL.deletingPathExtension().lastPathComponent
+    let parts = nameOnly.split(separator: " ", maxSplits: 1)
+    guard parts.count == 2,
+          let date = inputFormatter.date(from: String(parts[0])) else { continue }
+    let title = String(parts[1])
+    let content = (try? String(contentsOf: fileURL)) ?? ""
+    var extractedTags: [String] = []
 
-for article in recent {
-    // Extract preview
-    guard let data = try? Data(contentsOf: article.url),
-          let content = String(data: data, encoding: .utf8) else { continue }
-    let previewStart = "<!-- preview -->"
-    let previewEnd = "<!-- /preview -->"
-    var previewText = ""
-    if let startRange = content.range(of: previewStart),
-       let endRange = content.range(of: previewEnd, range: startRange.upperBound..<content.endIndex) {
-        previewText = String(content[startRange.upperBound..<endRange.lowerBound]).trimmingCharacters(in: .whitespacesAndNewlines)
+    // Extract YAML front matter tags
+    if content.hasPrefix("---") {
+        if let endRange = content.range(of: "\n---", range: content.index(content.startIndex, offsetBy: 3)..<content.endIndex) {
+            let yamlBlock = content[content.index(content.startIndex, offsetBy: 3)..<endRange.lowerBound]
+            for line in yamlBlock.split(separator: "\n") {
+                let trimmed = line.trimmingCharacters(in: .whitespaces)
+                if trimmed.hasPrefix("- ") {
+                    let tag = trimmed.dropFirst(2).trimmingCharacters(in: .whitespaces)
+                    extractedTags.append(String(tag))
+                }
+            }
+        }
     }
-    // Format date line
+    articles.append(Article(date: date, title: title, filename: filename, url: fileURL, tags: extractedTags))
+}
+
+// Sort by date descending
+let sortedArticles = articles.sorted { $0.date > $1.date }
+
+// MARK: - Generate Root README.md (5 Recent with Previews)
+var rootReadme = "# Recent Articles\n\n"
+for article in sortedArticles.prefix(5) {
+    let content = (try? String(contentsOf: article.url)) ?? ""
+    var preview = ""
+    if let start = content.range(of: "<!-- preview -->"),
+       let end = content.range(of: "<!-- /preview -->", range: start.upperBound..<content.endIndex) {
+        preview = String(content[start.upperBound..<end.lowerBound]).trimmingCharacters(in: .whitespacesAndNewlines)
+    }
     let dateLine = formattedDate(article.date)
-    // Append markdown
-    readme += "## \(article.title)\n"
-    readme += "###### \(dateLine)\n\n"
-    readme += "\(previewText)\n\n"
-    
+    let encoded = article.filename.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? article.filename
+    let link = "articles/\(encoded)"
+    rootReadme += "## [\(article.title)](\(link))\n"
+    rootReadme += "###### \(dateLine)\n\n"
+    rootReadme += "\(preview)\n\n"
+
     let filename = article.url.lastPathComponent
     let encodedFilename = filename.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? filename
-    readme += "[Continue Reading](articles/\(encodedFilename))\n\n"
+    rootReadme += "[Continue Reading](articles/\(encodedFilename))\n\n"
 }
 
-readme += "##\n"
-readme += "[View All](articles/)"
+rootReadme += "##\n"
+rootReadme += "[View All](articles/)"
 
-// Write README.md
-let readmeURL = URL(fileURLWithPath: "README.md")
-try readme.write(to: readmeURL, atomically: true, encoding: .utf8)
+try rootReadme.write(to: URL(fileURLWithPath: "README.md"), atomically: true, encoding: .utf8)
 
-print("README.md generated successfully with the 5 most recent articles.")
+// MARK: - Generate articles/README.md (All Articles List)
+var articlesIndex = "# All Articles\n\n"
+for article in sortedArticles {
+    let dateLine = formattedDate(article.date)
+    let encoded = article.filename.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? article.filename
+    let link = "articles/\(encoded)"
+    articlesIndex += "- [\(article.title)](\(link)) \(dateLine)\n"
+}
+try articlesIndex.write(to: articlesDir.appendingPathComponent("README.md"), atomically: true, encoding: .utf8)
+
+// MARK: - Build Tag Mapping
+var tagMap: [String: [Article]] = [:]
+for article in sortedArticles {
+    for tag in article.tags {
+        tagMap[tag, default: []].append(article)
+    }
+}
+
+// MARK: - Generate tags/README.md
+var tagReadme = "# Tags\n\n"
+for tag in tagMap.keys.sorted() {
+    let count = tagMap[tag]?.count ?? 0
+    let fileName = "\(tag.uppercased()).md"
+    let encodedFile = fileName.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? fileName
+    tagReadme += "- [\(tag)](\(encodedFile)) \(count)\n"
+}
+try tagReadme.write(to: tagsDir.appendingPathComponent("README.md"), atomically: true, encoding: .utf8)
+
+// MARK: - Generate individual Tag files
+for (tag, articles) in tagMap {
+    let fileName = "\(tag.uppercased()).md"
+    let tagFileURL = tagsDir.appendingPathComponent(fileName)
+    var contents = "# Articles tagged ‘\(tag)’\n\n"
+    for article in articles {
+        let encoded = article.filename.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? article.filename
+        let link = "../articles/\(encoded)"
+        contents += "- [\(article.title)](\(link))\n"
+    }
+    try contents.write(to: tagFileURL, atomically: true, encoding: .utf8)
+}
+
+print("Generated README.md, articles/README.md, and tags index/files.")
